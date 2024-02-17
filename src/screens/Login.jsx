@@ -1,41 +1,25 @@
 import { useState } from 'react';
-import './App.css';
-import Login from './screens/Login';
-import Home from './screens/Home';
-import ErrorPage from './error';
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import './../styles/HomeScreenStyles.css';
+import HALTitleLogo from './../assets/HALTitleLogo.png';
+import HALLogo from './../assets/HALLogo.png';
+import { Link } from 'react-router-dom';
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Login />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/dashboard",
-    element: <Home />,
-    errorElement: <ErrorPage />,
-  }
-]);
-
-function App() {
+function Login() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <RouterProvider router={router} />
-      {/* <div>
+    
+       <div>
         <a href="https://vitejs.dev" target="_blank">
-          <img src={} className="logo" alt="Vite logo" />
+          <img src={HALLogo} className="logo" alt="Vite logo" />
         </a>
         <a href="https://react.dev" target="_blank">
-          <img src={} className="logo" alt="React logo" />
+          <img src={HALTitleLogo} className="logo" alt="React logo" />
         </a>
       </div>
       <h1>Vite + React</h1>
+      <Link to={`/dashboard`}>Login</Link>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
@@ -50,9 +34,9 @@ function App() {
       <div className='globe-container'>
         <div className='globe'></div>
 
-      </div> */}
+      </div>
     </>
   )
 }
 
-export default App
+export default Login;
